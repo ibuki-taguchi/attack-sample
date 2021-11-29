@@ -19,10 +19,10 @@
   <div>③POST /secure/：新規投稿のリクエスト/Request for new posts（②で添付したファイルを投稿/Post the file attached in ②）</div><br>
 
   <div><b>①POST /secure/ </b></div>
-  <iframe src="/csrf-sample/secure-iframe1.html" width="700" height="500"></iframe>
-  <iframe src="/csrf-sample/secure-iframe2.html" width="0" height="0"></iframe>
+  <iframe src="/csrf-sample/secure/secure-iframe1.html" width="700" height="500"></iframe>
+  <iframe src="/csrf-sample/secure/secure-iframe2.html" width="0" height="0"></iframe>
   <div><br><b>②POST /secure/ [XHR]</b> => (3 seconds later) => <b>③POST /secure/</b></div>
-  <iframe src="/csrf-sample/secure-iframe3.html" width="700" height="500"></iframe>
+  <iframe src="/csrf-sample/secure/secure-iframe3.html" width="700" height="500"></iframe>
   <div>filedataなどを初期化する。事前にログインする。XHR+submit、backup_pathは推測可能</div>
 </body>
 
