@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSRF確認用(/secure/)</title>
+</head>
+
+<body>
+  <p><a href="https://10.210.145.28/csrf-sample.html">Back</a></p>
+  <p><a href="https://10.210.145.28/">🏠 Home</a></p>
+  <h3>CSRF確認用ページ/CSRF Demonstration page</h3>
+  <p>target：<a href="https://10.210.145.28/secure/">🛡 対策版/Secure version</a> (https://10.210.145.28/secure/)</p>
+  <div><b>#リクエスト/Request</b></div>
+  <div>①POST /secure/：新規投稿のリクエスト/Request for new posts（content="###CSRF demo###"）</div>
+  <div>②POST /secure/ [XMLHttpRequest]：ファイル添付のリクエスト/Request for file attach（filename="csrf.php"）</div>
+  <div>③POST /secure/：新規投稿のリクエスト/Request for new posts（②で添付したファイルを投稿/Post the file attached in ②）</div><br>
+
+  <div><b>①POST /secure/ </b></div>
+  <iframe src="/csrf-sample/secure-iframe1.html" width="700" height="500"></iframe>
+  <iframe src="/csrf-sample/secure-iframe2.html" width="0" height="0"></iframe>
+  <div><br><b>②POST /secure/ [XHR]</b> => (3 seconds later) => <b>③POST /secure/</b></div>
+  <iframe src="/csrf-sample/secure-iframe3.html" width="700" height="500"></iframe>
+  <div>filedataなどを初期化する。事前にログインする。XHR+submit、backup_pathは推測可能</div>
+</body>
+
+</html>
