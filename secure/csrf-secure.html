@@ -16,7 +16,8 @@
   <div><b>#リクエスト/Request</b></div>
   <div>①POST /secure/：新規投稿のリクエスト/Request for new posts（content="###CSRF demo###"）</div>
   <div>②POST /secure/ [XMLHttpRequest]：ファイル添付のリクエスト/Request for file attach（filename="csrf.php"）</div>
-  <div>③POST /secure/：新規投稿のリクエスト/Request for new posts（②で添付したファイルを投稿/Post the file attached in ②）</div><br>
+  <div>③POST /secure/：新規投稿のリクエスト/Request for new posts（content="csrf.php uploaded" ②で添付したファイルを投稿/Post the file
+    attached in ②）</div><br>
 
   <div><b>①POST /secure/ </b></div>
   <iframe src="/csrf-sample/secure/secure-iframe1.html" width="700" height="500"></iframe>
